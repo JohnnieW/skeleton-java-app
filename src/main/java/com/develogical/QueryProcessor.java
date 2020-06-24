@@ -27,6 +27,22 @@ public class QueryProcessor {
             return "JohnWalker";
         }
         
+        
+        if(query.toLowerCase().contains("what is") && query.toLowerCase().contains("plus")){
+        	String[] tokens = query.split(" ");
+        	if(tokens.length > 6){
+            	int num1 = Integer.parseInt(tokens[3]);
+            	int num2 = Integer.parseInt(tokens[5]);
+            	int num3 = Integer.parseInt(tokens[7]);
+            	int sum = num1 + num2 + num3;
+            	return sum + "";
+        	}
+        	int num1 = Integer.parseInt(tokens[3]);
+        	int num2 = Integer.parseInt(tokens[5]);
+        	int sum = num1 + num2;
+        	return sum + "";
+        }
+        
         if(query.toLowerCase().contains("what is") && query.toLowerCase().contains("plus") ){
         	String[] tokens = query.split(" ");
         	int num1 = Integer.parseInt(tokens[3]);
