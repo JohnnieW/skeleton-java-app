@@ -3,6 +3,11 @@ package com.develogical;
 public class QueryProcessor {
 
     public String process(String query) {
+    	
+        if(query.toLowerCase().contains("what colour is a banana")){
+        return "yellow";
+        }
+    	
         if (query.toLowerCase().contains("romeo and juliet")) {
             return "William Shakespeare";
         }
