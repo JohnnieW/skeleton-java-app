@@ -17,6 +17,14 @@ public class QueryProcessor {
         	int sum = num1 + num2;
         	return sum + "";
         }
+        
+        if(query.toLowerCase().startsWith("which of the following numbers is the largest:")){
+        	String temp = query.toLowerCase().replace("which of the following numbers is the largest:", "");
+        	String[] tokens = temp.split(",");
+        	int max = Math.max(Integer.parseInt(tokens[0]), Integer.parseInt(tokens[1]));
+        	return max + "";
+        }
+        
         return "";
     }
 }
