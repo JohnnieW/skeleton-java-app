@@ -35,6 +35,14 @@ public class QueryProcessor {
         	return sum + "";
         }
         
+        if(query.toLowerCase().contains("what is") && query.toLowerCase().contains("minus") ){
+        	String[] tokens = query.split(" ");
+        	int num1 = Integer.parseInt(tokens[3]);
+        	int num2 = Integer.parseInt(tokens[5]);
+        	int sum = num1 - num2;
+        	return sum + "";
+        }
+        
         if(query.toLowerCase().contains("what is") && query.toLowerCase().contains("multiplied by") ){
         	String[] tokens = query.split(" ");
         	int num1 = Integer.parseInt(tokens[3]);
