@@ -27,6 +27,16 @@ public class QueryProcessor {
             return "JohnWalker";
         }
         
+        if(query.toLowerCase().contains("what is") && query.toLowerCase().contains("multiplied by") && query.toLowerCase().contains("plus")){
+        	String[] tokens = query.split(" ");
+            	int num1 = Integer.parseInt(tokens[3]);
+            	int num2 = Integer.parseInt(tokens[7]);
+            	int num3 = Integer.parseInt(tokens[8]);
+            	int sum = (num1 * num2) + num3;
+            	return sum + "";
+        }
+        
+        
         
         if(query.toLowerCase().contains("what is") && query.toLowerCase().contains("plus")){
         	String[] tokens = query.split(" ");
@@ -59,16 +69,7 @@ public class QueryProcessor {
         	return sum + "";
         }
         
-        if(query.toLowerCase().contains("what is") && query.toLowerCase().contains("multiplied by") && query.toLowerCase().contains("plus")){
-        	return "2";
-        	/*String[] tokens = query.split(" ");
-            	int num1 = Integer.parseInt(tokens[3]);
-            	int num2 = Integer.parseInt(tokens[7]);
-            	int num3 = Integer.parseInt(tokens[8]);
-            	int sum = (num1 * num2) + num3;
-            	return sum + "";*/
-        }
-        
+
         if(query.toLowerCase().contains("what is") && query.toLowerCase().contains("to the power of") ){
         	String[] tokens = query.split(" ");
         	int num1 = Integer.parseInt(tokens[3]);
