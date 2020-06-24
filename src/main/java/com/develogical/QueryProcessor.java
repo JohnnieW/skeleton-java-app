@@ -28,6 +28,16 @@ public class QueryProcessor {
         	return max + "";
         }
         
+        if(query.toLowerCase().startsWith(" which of the following numbers is the largest:")){
+        	String temp = query.toLowerCase().replace(" which of the following numbers is the largest:", "");
+        	String[] tokens = temp.split(",");
+        	int max = 0;
+        	for(int i = 0; i < tokens.length; i++){
+        		max = Math.max(max, Integer.parseInt(tokens[i].trim()));
+        	}
+        	return max + "";
+        }
+        
         return "";
     }
 }
