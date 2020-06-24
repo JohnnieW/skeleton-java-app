@@ -63,8 +63,33 @@ public class QueryProcessor {
         	}
         } 
         
+        if(query.toLowerCase().contains("which of the following numbers are primes:")){
+        	String temp = query.split(":")[2];    
+        	String[] tokens = temp.split(",");
+        	for(int i = 0; i < tokens.length; i++){
+        		if(isPrime(Integer.parseInt(tokens[i].trim()))){
+        			return tokens[i].trim();
+        		}
+        	}
+        } 
+        
         return "";
     }
+  
+
+    static boolean isPrime(int n) 
+    { 
+        // Corner case 
+        if (n <= 1) 
+            return false; 
+  
+        // Check from 2 to n-1 
+        for (int i = 2; i < n; i++) 
+            if (n % i == 0) 
+                return false; 
+  
+        return true; 
+    }  
     
     static boolean isCube(int x){
     	int a = (int) Math.round(Math.pow(x, 1.0/3.0));
