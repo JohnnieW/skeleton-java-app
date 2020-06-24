@@ -66,9 +66,13 @@ public class QueryProcessor {
         if(query.toLowerCase().contains("which of the following numbers are primes:")){
         	String temp = query.split(":")[2];    
         	String[] tokens = temp.split(",");
+        	String primeList = "";
         	for(int i = 0; i < tokens.length; i++){
         		if(isPrime(Integer.parseInt(tokens[i].trim()))){
-        			return tokens[i].trim();
+        			if(primeList.isEmpty()){
+        				primeList += ",";
+        			}
+        			primeList = primeList + tokens[i].trim();
         		}
         	}
         } 
