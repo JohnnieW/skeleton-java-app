@@ -9,6 +9,14 @@ public class QueryProcessor {
         if (query.toLowerCase().contains("what is your name")) {
             return "JohnWalker";
         }
+        
+        if(query.toLowerCase().contains("what is") && query.toLowerCase().contains("plus") ){
+        	String[] tokens = query.split(" ");
+        	int num1 = Integer.parseInt(tokens[3]);
+        	int num2 = Integer.parseInt(tokens[5]);
+        	int sum = num1 + num2;
+        	return sum + "";
+        }
         return "";
     }
 }
