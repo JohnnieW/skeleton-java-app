@@ -4,6 +4,10 @@ public class QueryProcessor {
 
     public String process(String query) {
     	
+    	if(query.toLowerCase().contains("which city is the Eiffel tower in")) {
+    		return "Paris";
+    	}
+    	
     	 if(query.toLowerCase().contains("which year was Theresa May first elected")){
     	        return "2017";
     	 }
