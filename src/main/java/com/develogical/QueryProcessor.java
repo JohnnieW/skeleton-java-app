@@ -18,7 +18,13 @@ public class QueryProcessor {
         	return sum + "";
         }
         
-
+        if(query.toLowerCase().contains("what is") && query.toLowerCase().contains("multiplied by") ){
+        	String[] tokens = query.split(" ");
+        	int num1 = Integer.parseInt(tokens[3]);
+        	int num2 = Integer.parseInt(tokens[6]);
+        	int sum = num1 + num2;
+        	return sum + "";
+        }
         
         if(query.toLowerCase().contains("which of the following numbers is the largest:")){
         	String temp = query.split(":")[2];    
