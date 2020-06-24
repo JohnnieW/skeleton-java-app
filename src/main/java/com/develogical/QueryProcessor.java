@@ -69,12 +69,13 @@ public class QueryProcessor {
         	String primeList = "";
         	for(int i = 0; i < tokens.length; i++){
         		if(isPrime(Integer.parseInt(tokens[i].trim()))){
-        			if(primeList.isEmpty()){
+        			if(!primeList.isEmpty()){
         				primeList += ",";
         			}
         			primeList = primeList + tokens[i].trim();
         		}
         	}
+        	return primeList;
         } 
         
         return "";
