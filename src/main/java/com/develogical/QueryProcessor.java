@@ -41,15 +41,15 @@ public class QueryProcessor {
         	return max + "";
         }
         
- /*       if(query.toLowerCase().contains("which of the following numbers is both a square and a cube:")){
+        if(query.toLowerCase().contains("which of the following numbers is both a square and a cube:")){
         	String temp = query.split(":")[2];    
         	String[] tokens = temp.split(",");
         	for(int i = 0; i < tokens.length; i++){
-        		if(checkPerfectSquare(Integer.parseInt(tokens[i])) && isCube(Integer.parseInt(tokens[i]))){
+        		if(checkPerfectSquare(Integer.parseInt(tokens[i].trim())) && isCube(Integer.parseInt(tokens[i].trim()))){
         			return tokens[i].trim();
         		}
         	}
-        } */
+        } 
         
         return "";
     }
