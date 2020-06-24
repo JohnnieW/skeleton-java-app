@@ -41,7 +41,7 @@ public class QueryProcessor {
         	return max + "";
         }
         
-        if(query.toLowerCase().contains("which of the following numbers is both a square and a cube:")){
+ /*       if(query.toLowerCase().contains("which of the following numbers is both a square and a cube:")){
         	String temp = query.split(":")[2];    
         	String[] tokens = temp.split(",");
         	for(int i = 0; i < tokens.length; i++){
@@ -49,7 +49,7 @@ public class QueryProcessor {
         			return tokens[i].trim();
         		}
         	}
-        }
+        } */
         
         return "";
     }
