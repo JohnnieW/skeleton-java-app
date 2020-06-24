@@ -51,6 +51,13 @@ public class QueryProcessor {
         	return sum + "";
         }
         
+        if(query.toLowerCase().contains("what is") && query.toLowerCase().contains("to the power of") ){
+        	String[] tokens = query.split(" ");
+        	int num1 = Integer.parseInt(tokens[3]);
+        	int num2 = Integer.parseInt(tokens[8]);
+        	return (int)Math.pow(num1, num2) + "";
+        }
+        
         if(query.toLowerCase().contains("which of the following numbers is the largest:")){
         	String temp = query.split(":")[2];    
         	String[] tokens = temp.split(",");
