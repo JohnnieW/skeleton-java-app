@@ -36,6 +36,28 @@ public class QueryProcessor {
         	return max + "";
         }
         
+        if(query.toLowerCase().contains("which of the following numbers is both a square and a cube:")){
+        	String temp = query.split(":")[2];    
+        	String[] tokens = temp.split(",");
+        	for(int i = 0; i < tokens.length; i++){
+        		if(checkPerfectSquare(Integer.parseInt(tokens[i])) && isCube(Integer.parseInt(tokens[i]))){
+        			return tokens[i].trim();
+        		}
+        	}
+        }
+        
         return "";
     }
+    
+    static boolean isCube(int x){
+    	int a = (int) Math.round(Math.pow(x, 1.0/3.0));
+    	return (x == a * a * a); 
+    }
+    
+    static boolean checkPerfectSquare(int x)  
+    { 
+
+	double sq = Math.sqrt(x); 
+	return ((sq - Math.floor(sq)) == 0); 
+    } 
 }
