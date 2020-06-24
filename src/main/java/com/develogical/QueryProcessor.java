@@ -74,6 +74,13 @@ public class QueryProcessor {
         	return (int)Math.pow(num1, num2) + "";
         }
         
+        
+        if(query.toLowerCase().contains("fibonacci") ){
+        	String[] tokens = query.split(" ");
+        	String temp = tokens[4].trim().replace("th", "").replace("st", "").replace("rd", "");
+        	return fib(Integer.parseInt(temp)) + "";
+        }
+        
         if(query.toLowerCase().contains("which of the following numbers is the largest:")){
         	String temp = query.split(":")[2];    
         	String[] tokens = temp.split(",");
@@ -138,4 +145,17 @@ public class QueryProcessor {
 	double sq = Math.sqrt(x); 
 	return ((sq - Math.floor(sq)) == 0); 
     } 
+    
+    public static int fib(int n) 
+    {
+         int a = 0, b = 0, c = 1;
+        for(int i = 1; i <= n; i++)
+        {
+            a = b;
+            b = c;
+            c = a + b;
+        }
+        return a;
+    }
+    
 }
